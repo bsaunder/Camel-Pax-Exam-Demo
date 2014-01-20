@@ -1,13 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>de.nierbeck.camel.exam.demo</groupId>
-		<artifactId>pom</artifactId>
+		<groupId>de.nierbeck.camel.exam</groupId>
+		<artifactId>demo</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
-		<relativePath>../pom</relativePath>
 	</parent>
 	<artifactId>route-control</artifactId>
+
 	<name>Route-Control</name>
 	<description>Contains the camel routes</description>
 
@@ -139,10 +138,10 @@
 			<artifactId>geronimo-validation_1.0_spec</artifactId>
 		</dependency>
 		<dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-atinject_1.0_spec</artifactId>
-        </dependency>
-		
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-atinject_1.0_spec</artifactId>
+		</dependency>
+
 
 		<dependency>
 			<groupId>commons-lang</groupId>
@@ -269,35 +268,6 @@
 		</resources>
 
 		<plugins>
-			<!-- CXF wsdl2java generator, will plugin to the compile goal -->
-			<plugin>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-java2ws-plugin</artifactId>
-				<version>${dependency.cxf.version}</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.cxf</groupId>
-						<artifactId>cxf-rt-frontend-jaxws</artifactId>
-						<version>${dependency.cxf.version}</version>
-					</dependency>
-				</dependencies>
-				<executions>
-					<execution>
-						<id>generate-wsdl</id>
-						<phase>process-classes</phase>
-						<configuration>
-							<className>de.nierbeck.camel.exam.demo.control.WebServiceOrder</className>
-							<genWsdl>true</genWsdl>
-							<frontend>jaxws</frontend>
-							<databinding>jaxb</databinding>
-							<verbose>true</verbose>
-						</configuration>
-						<goals>
-							<goal>java2ws</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 
 			<plugin>
 				<groupId>org.apache.felix</groupId>
@@ -308,15 +278,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>**/ObjectFactory.java</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 
 			<!-- generate dependencies versions -->
@@ -336,8 +297,7 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -399,5 +359,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<packaging>bundle</packaging>
 </project>
