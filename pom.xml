@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>de.nierbeck.camel.exam</groupId>
-    <artifactId>demo</artifactId>
+    <groupId>com.walmart.mqm</groupId>
+    <artifactId>pax_exam_demo</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Demo</name>
-    <description>A Demo Project showing how to combine Camel with CXF, ActiveMQ and JPA and test this with blueprint</description>
+    <name>Pax Exam Demo</name>
+    <description>A Demo Project showing how to Pax Exam</description>
 
     <modules>
-        <module>route-control</module>
+        <module>route-tests</module>
     </modules>
     
     <properties>
