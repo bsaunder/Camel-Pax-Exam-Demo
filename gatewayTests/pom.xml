@@ -5,10 +5,10 @@
 		<artifactId>paxexam</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>route-tests</artifactId>
+	<artifactId>gatewayTests</artifactId>
 
-	<name>Route Tests</name>
-	<description>Contains the Camel Route Tests</description>
+	<name>Gateway Route Tests</name>
+	<description>Contains the Gateway Camel Route Tests</description>
 
 	<dependencies>
 

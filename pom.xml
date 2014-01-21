@@ -12,7 +12,8 @@
     <modules>
     	<module>gatewayBundle</module>
     	<module>storeBundle</module>
-        <module>route-tests</module>
+        <module>storeTests</module>
+        <module>gatewayTests</module>
     </modules>
     
     <properties>
