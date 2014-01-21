@@ -1,4 +1,4 @@
-package de.nierbeck.camel.exam.demo.testutil;
+package com.walmart.mqm.test.paxexam.util;
 
 import java.util.Arrays;
 import java.util.Collection;

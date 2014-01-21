@@ -2,8 +2,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.walmart.mqm</groupId>
-		<artifactId>pax_exam_demo</artifactId>
-		<version>0.1.0-SNAPSHOT</version>
+		<artifactId>paxexam</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>route-tests</artifactId>
 
@@ -12,14 +12,19 @@
 
 	<dependencies>
 
-		<!-- inter module dependencies -->
+		<!-- Bundle Test Dependencies -->
 		<dependency>
-			<groupId>de.nierbeck.camel.exam.demo</groupId>
-			<artifactId>entities</artifactId>
+			<groupId>com.walmart.mqm</groupId>
+			<artifactId>storeBundle</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.walmart.mqm</groupId>
+			<artifactId>gatewayBundle</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
-		<!-- dependencies for camel -->
+		<!-- Dependencies for Camel -->
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-core</artifactId>
@@ -80,23 +85,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- activemq -->
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-camel</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-pool</artifactId>
-		</dependency>
-
-		<!-- test-db -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- test OSGi -->
 		<dependency>
 			<groupId>org.osgi</groupId>
@@ -116,33 +104,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- OpenJPA dependency -->
-		<dependency>
-			<groupId>org.apache.openjpa</groupId>
-			<artifactId>openjpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-jms_1.1_spec</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-jta_1.1_spec</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-jpa_2.0_spec</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-validation_1.0_spec</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-atinject_1.0_spec</artifactId>
-		</dependency>
-
-
+		<!-- Misc -->
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
@@ -161,29 +123,6 @@
 		<dependency>
 			<groupId>org.apache.servicemix.bundles</groupId>
 			<artifactId>org.apache.servicemix.bundles.serp</artifactId>
-		</dependency>
-
-
-		<!-- CXF dependencies -->
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-tools-common</artifactId>
-			<version>${dependency.cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>${dependency.cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>${dependency.cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-core</artifactId>
-			<version>${dependency.cxf.version}</version>
 		</dependency>
 
 		<!-- Pax-Exam-Karaf Testsetup -->

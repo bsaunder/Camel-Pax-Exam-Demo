@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:camel="http://camel.apache.org/schema/blueprint" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amq="http://activemq.apache.org/schema/core" xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+	xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0"
+	xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0
+http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+      http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0
+http://svn.apache.org/repos/asf/aries/trunk/blueprint/blueprint-cm/src/main/resources/org/apache/aries/blueprint/compendium/cm/blueprint-cm-1.1.0.xsd
+      http://www.osgi.org/xmlns/blueprint-ext/v1.1.0
+https://svn.apache.org/repos/asf/aries/tags/blueprint-0.3.1/blueprint-core/src/main/resources/org/apache/aries/blueprint/ext/blueprint-ext.xsd
+      http://camel.apache.org/schema/blueprint
+http://camel.apache.org/schema/blueprint/camel-blueprint.xsd
+      http://activemq.apache.org/schema/core
+http://activemq.apache.org/schema/core/activemq-core.xsd">
+
+	<cm:property-placeholder id="gatewayProperties" persistent-id="com.walmart.mqm.gateway.routes" update-strategy="reload" />
+
+	<camelContext id="gatewayAmq2WmqBridge" xmlns="http://camel.apache.org/schema/blueprint">
+
+		<errorHandler id="gwErrorHandler" type="DefaultErrorHandler">
+			<redeliveryPolicy maximumRedeliveries="{{connectionMaximumRedeliveries}}" redeliveryDelay="{{connectionRedeliveryDelay}}" retryAttemptedLogLevel="WARN" />
+		</errorHandler>
+
+		<route id="gatewayAmqtoWwq" errorHandlerRef="gwErrorHandler">
+			<from uri="{{gateway_in}}" />
+			<onException>
+				<exception>java.net.ConnectException</exception>
+				<redeliveryPolicy maximumRedeliveries="{{connectionMaximumRedeliveries}}" redeliveryDelay="{{connectionRedeliveryDelay}}" />
+				<handled>
+					<constant>true</constant>
+				</handled>
+				<setHeader headerName="WM_ERROR_MESSAGE">
+					<simple>${exception.message}</simple>
+				</setHeader>
+				<setHeader headerName="CamelJmsDestinationName">
+					<simple>${in.header.JMSDestination.toString().substring(8)}.DLQ</simple>
+				</setHeader>
+				<to uri="{{gateway_logError}}" />
+				<to uri="{{gateway_connectExceptionDlq}}" />
+			</onException>
+			<to uri="{{gateway_logDebug}}" />
+			<choice>
+				<when>
+					<simple>${in.header.WM_MSG_ID} == null or
+						${in.header.WM_MSG_ID} == ''</simple>
+					<setHeader headerName="WM_MSG_ID">
+						<simple>${in.header.JMSMessageID}</simple>
+					</setHeader>
+					<log message="WM_MSG_ID header was not set by store for JMS ID: ${in.header.JMSMessageID} ExchId: ${id}" loggingLevel="WARN" />
+				</when>
+			</choice>
+			<choice>
+				<when>
+					<simple>${in.header.WM_HO_WMQ_QUEUE} == null or
+						${in.header.WM_HO_WMQ_QUEUE} == ''</simple>
+					<setHeader headerName="WM_ERROR_MESSAGE">
+						<simple>Header WM_HO_WMQ_QUEUE is not set. Unable to route to WMQ.
+						</simple>
+					</setHeader>
+					<setHeader headerName="CamelJmsDestinationName">
+						<simple>${in.header.JMSDestination.toString().substring(8)}.DLQ</simple>
+					</setHeader>
+					<to uri="{{gateway_logError}}" />
+					<to uri="{{gateway_noHomeOfficeDlq}}" />
+				</when>
+				<otherwise>
+					<setHeader headerName="CamelJmsDestinationName">
+						<simple>queue:///${in.header.WM_HO_WMQ_QUEUE}?targetClient=1</simple>
+					</setHeader>
+					<to uri="{{gateway_logDebug}}" />
+					<to uri="{{gateway_out}}" />
+				</otherwise>
+			</choice>
+		</route>
+	</camelContext>
+
+</blueprint>
