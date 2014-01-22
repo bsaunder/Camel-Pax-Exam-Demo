@@ -81,27 +81,10 @@
 			<version>${dependency.junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.ops4j.pax.tipi</groupId>
-			<artifactId>org.ops4j.pax.tipi.hamcrest.core</artifactId>
-			<version>${dependency.hamcrest.version}</version>
-		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- submodules dependencies -->
-			<dependency>
-				<groupId>de.tecdoc.datacombination</groupId>
-				<artifactId>controle</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>de.tecdoc.datacombination</groupId>
-				<artifactId>entity-commons</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
 			<!-- dependencies for camel -->
 			<dependency>
 				<groupId>org.apache.camel</groupId>
@@ -190,46 +173,6 @@
 				<scope>test</scope>
 			</dependency>
 
-			<!-- dependencies for activemq -->
-			<dependency>
-				<groupId>org.apache.activemq</groupId>
-				<artifactId>activemq</artifactId>
-				<version>${dependency.activemq.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.activemq</groupId>
-				<artifactId>activemq-blueprint</artifactId>
-				<version>${dependency.activemq.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.activemq</groupId>
-				<artifactId>activemq-camel</artifactId>
-				<version>${dependency.activemq.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.activemq</groupId>
-				<artifactId>activemq-pool</artifactId>
-				<version>${dependency.activemq.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
-			<!-- commons modules -->
-			<dependency>
-				<groupId>commons-beanutils</groupId>
-				<artifactId>commons-beanutils</artifactId>
-				<version>${dependency.commons-beanutils.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>commons-collections</groupId>
-				<artifactId>commons-collections</artifactId>
-				<version>${dependency.commons-collections.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
 			<!-- dependencies for logging -->
 			<dependency>
 				<groupId>org.slf4j</groupId>
@@ -240,12 +183,6 @@
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-log4j12</artifactId>
-				<version>${dependency.slf4j.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>jcl-over-slf4j</artifactId>
 				<version>${dependency.slf4j.version}</version>
 				<scope>provided</scope>
 			</dependency>
@@ -266,113 +203,6 @@
 				<scope>provided</scope>
 			</dependency>
 
-			<!-- Test database H2 -->
-			<dependency>
-				<groupId>com.h2database</groupId>
-				<artifactId>h2</artifactId>
-				<version>${dependency.h2.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<!-- DBCP -->
-			<dependency>
-				<groupId>commons-dbcp</groupId>
-				<artifactId>commons-dbcp</artifactId>
-				<version>${dependecy.commons-dbcp.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-
-			<!-- OSGi dependencies -->
-			<dependency>
-				<groupId>org.osgi</groupId>
-				<artifactId>org.osgi.core</artifactId>
-				<version>${dependency.osgi.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.osgi</groupId>
-				<artifactId>org.osgi.compendium</artifactId>
-				<version>${dependency.osgi.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<!-- dependencies for cxf -->
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt</artifactId>
-				<type>bundle</type>
-				<version>${dependency.cxf.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
-			<!-- OpenJPA dependency -->
-			<dependency>
-				<groupId>org.apache.openjpa</groupId>
-				<artifactId>openjpa</artifactId>
-				<version>${dependency.openjpa.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.geronimo.specs</groupId>
-				<artifactId>geronimo-jms_1.1_spec</artifactId>
-				<version>${dependency.geronimo-jms.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.geronimo.specs</groupId>
-				<artifactId>geronimo-jta_1.1_spec</artifactId>
-				<version>${dependency.geronimo-jms.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.geronimo.specs</groupId>
-				<artifactId>geronimo-jpa_2.0_spec</artifactId>
-				<version>${dependency.geronimo-jpa.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.geronimo.specs</groupId>
-				<artifactId>geronimo-validation_1.0_spec</artifactId>
-				<version>${dependency.geronimo-jpa.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>commons-lang</groupId>
-				<artifactId>commons-lang</artifactId>
-				<version>${dependency.commons-lang.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>commons-pool</groupId>
-				<artifactId>commons-pool</artifactId>
-				<version>${dependency.commons-pool.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.servicemix.bundles</groupId>
-				<artifactId>org.apache.servicemix.bundles.asm</artifactId>
-				<version>${dependency.asm.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.servicemix.bundles</groupId>
-				<artifactId>org.apache.servicemix.bundles.serp</artifactId>
-				<version>${dependency.serp.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ops4j.pax.logging</groupId>
-				<artifactId>pax-logging-service</artifactId>
-				<version>${dependency.pax-loggin.version}</version>
-				<scope>test</scope>
-			</dependency>
-
 			<!-- Pax Exam Dependencies -->
 			<dependency>
 				<groupId>org.ops4j.pax.exam</groupId>
@@ -380,27 +210,10 @@
 				<version>${dependency.pax-exam.version}</version>
 				<scope>test</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.ops4j.pax.exam</groupId>
-				<artifactId>pax-exam-spi</artifactId>
-				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.ops4j.pax.exam</groupId>
-				<artifactId>pax-exam-container-remote</artifactId>
-				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
+
 			<dependency>
 				<groupId>org.ops4j.pax.exam</groupId>
 				<artifactId>pax-exam-container-rbc</artifactId>
-				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.ops4j.pax.exam</groupId>
-				<artifactId>pax-exam-container-rbc-client</artifactId>
 				<version>${dependency.pax-exam.version}</version>
 				<scope>test</scope>
 			</dependency>
@@ -410,134 +223,11 @@
 				<version>${dependency.pax-exam.version}</version>
 				<scope>test</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.ops4j.pax.exam</groupId>
-				<artifactId>pax-exam-container-native</artifactId>
-				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.ops4j.pax.exam</groupId>
-				<artifactId>pax-exam-link-mvn</artifactId>
-				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.ops4j.pax.url</groupId>
-				<artifactId>pax-url-aether</artifactId>
-				<version>${dependency.paxurl.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.ops4j.pax.exam</groupId>
-				<artifactId>pax-exam-testforge</artifactId>
-				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>org.apache.felix.framework</artifactId>
-				<version>${dependency.felix.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ops4j.pax.exam</groupId>
-				<artifactId>pax-exam-link-assembly</artifactId>
-				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ops4j.pax.runner</groupId>
-				<artifactId>pax-runner-no-jcl</artifactId>
-				<version>${dependency.pax-runner.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.servicemix.bundles</groupId>
-				<artifactId>org.apache.servicemix.bundles.javax-inject</artifactId>
-				<version>${dependency.javax-inject.version}</version>
-			</dependency>
-
-			<!-- For sane logging -->
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-core</artifactId>
-				<version>${dependency.logback.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-classic</artifactId>
-				<version>${dependency.logback.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>jul-to-slf4j</artifactId>
-				<version>${dependency.slf4j.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<!-- extra pax-exam dependencies -->
-			<dependency>
-				<groupId>org.ops4j.pax.swissbox</groupId>
-				<artifactId>pax-swissbox-lifecycle</artifactId>
-				<version>${dependency.pax-swissbox.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ops4j.pax.swissbox</groupId>
-				<artifactId>pax-swissbox-framework</artifactId>
-				<version>${dependency.pax-swissbox.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ops4j.pax.swissbox</groupId>
-				<artifactId>pax-swissbox-extender</artifactId>
-				<version>${dependency.pax-swissbox.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ops4j.pax.swissbox</groupId>
-				<artifactId>pax-swissbox-core</artifactId>
-				<version>${dependency.pax-swissbox.version}</version>
-				<scope>test</scope>
-			</dependency>
 
 			<dependency>
 				<groupId>org.ops4j.pax.exam</groupId>
 				<artifactId>pax-exam-extender-service</artifactId>
 				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ops4j.base</groupId>
-				<artifactId>ops4j-base</artifactId>
-				<version>${dependency.ops4j-base.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.geronimo.specs</groupId>
-				<artifactId>geronimo-atinject_1.0_spec</artifactId>
-				<version>${dependency.geronimo-inject.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ops4j.pax.tipi</groupId>
-				<artifactId>org.ops4j.pax.tipi.junit</artifactId>
-				<version>${dependency.junit.version}</version>
 				<scope>test</scope>
 			</dependency>
 
@@ -585,40 +275,6 @@
 						<groupId>org.apache.felix</groupId>
 					</exclusion>
 				</exclusions>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.activemq</groupId>
-				<artifactId>activemq-karaf</artifactId>
-				<version>${dependency.activemq.version}</version>
-				<scope>test</scope>
-				<type>xml</type>
-				<classifier>features</classifier>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.cxf.karaf</groupId>
-				<artifactId>apache-cxf</artifactId>
-				<version>${dependency.cxf.version}</version>
-				<scope>test</scope>
-				<type>xml</type>
-				<classifier>features</classifier>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.karaf.features</groupId>
-				<artifactId>standard</artifactId>
-				<version>${dependency.karaf.version}</version>
-				<scope>test</scope>
-				<type>xml</type>
-				<classifier>features</classifier>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.karaf.features</groupId>
-				<artifactId>enterprise</artifactId>
-				<version>${dependency.karaf.version}</version>
-				<scope>test</scope>
-				<type>xml</type>
-				<classifier>features</classifier>
 			</dependency>
 
 		</dependencies>

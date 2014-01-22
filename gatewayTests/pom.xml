@@ -85,13 +85,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- test OSGi -->
-		<dependency>
-			<groupId>org.osgi</groupId>
-			<artifactId>org.osgi.core</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -102,27 +95,6 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<!-- Misc -->
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-pool</groupId>
-			<artifactId>commons-pool</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.servicemix.bundles</groupId>
-			<artifactId>org.apache.servicemix.bundles.asm</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.servicemix.bundles</groupId>
-			<artifactId>org.apache.servicemix.bundles.serp</artifactId>
 		</dependency>
 
 		<!-- Pax-Exam-Karaf Testsetup -->
@@ -162,33 +134,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-karaf</artifactId>
-			<type>xml</type>
-			<classifier>features</classifier>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.camel.karaf</groupId>
 			<artifactId>apache-camel</artifactId>
-			<type>xml</type>
-			<classifier>features</classifier>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf.karaf</groupId>
-			<artifactId>apache-cxf</artifactId>
-			<type>xml</type>
-			<classifier>features</classifier>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.karaf.features</groupId>
-			<artifactId>standard</artifactId>
-			<type>xml</type>
-			<classifier>features</classifier>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.karaf.features</groupId>
-			<artifactId>enterprise</artifactId>
 			<type>xml</type>
 			<classifier>features</classifier>
 		</dependency>
