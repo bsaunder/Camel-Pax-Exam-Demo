@@ -17,7 +17,6 @@
 
 	<properties>
 		<dependency.camel.version>2.12.2</dependency.camel.version>
-		<dependency.activemq.version>5.9.0</dependency.activemq.version>
 		<dependency.junit.version>4.11</dependency.junit.version>
 		<dependency.pax-exam.version>3.4.0</dependency.pax-exam.version>
 		<dependency.karaf.version>3.0.0</dependency.karaf.version>
@@ -138,29 +137,6 @@
 				<version>${dependency.pax-exam.version}</version>
 				<scope>test</scope>
 			</dependency>
-
-			<dependency>
-				<groupId>org.ops4j.pax.exam</groupId>
-				<artifactId>pax-exam-container-rbc</artifactId>
-				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.ops4j.pax.exam</groupId>
-				<artifactId>pax-exam-invoker-junit</artifactId>
-				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.ops4j.pax.exam</groupId>
-				<artifactId>pax-exam-extender-service</artifactId>
-				<version>${dependency.pax-exam.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-
-			<!-- Pax-Exam-Karaf Testsetup -->
 			<dependency>
 				<groupId>org.ops4j.pax.exam</groupId>
 				<artifactId>pax-exam-container-karaf</artifactId>
