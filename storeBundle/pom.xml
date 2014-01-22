@@ -16,16 +16,6 @@
 			<artifactId>camel-core</artifactId>
 			<version>${dependency.camel.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-camel</artifactId>
-			<version>${dependency.activemq.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-all</artifactId>
-			<version>${dependency.activemq.version}</version>
-		</dependency>
 	</dependencies>
 
 	<build>
