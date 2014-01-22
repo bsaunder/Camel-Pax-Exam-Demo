@@ -69,7 +69,7 @@ public class StoreRouteTest extends CamelTestSupport {
                 features(
                         maven().groupId("org.apache.camel.karaf").artifactId("apache-camel").type("xml")
                                 .classifier("features").versionAsInProject(), "camel-blueprint",
-                        "camel-jpa", "camel-mvel", "camel-jdbc", "camel-cxf", "camel-test"),
+                        "camel-jpa", "camel-mvel", "camel-cxf", "camel-test"),
 
                 KarafDistributionOption.editConfigurationFilePut("etc/org.ops4j.pax.url.mvn.cfg",
                         "org.ops4j.pax.url.mvn.proxySupport", "true"),
