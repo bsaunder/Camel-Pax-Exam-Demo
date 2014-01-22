@@ -66,12 +66,6 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-velocity</artifactId>
-				<version>${dependency.camel.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-mvel</artifactId>
 				<version>${dependency.camel.version}</version>
 				<scope>provided</scope>
@@ -84,19 +78,7 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-mail</artifactId>
-				<version>${dependency.camel.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-cxf</artifactId>
-				<version>${dependency.camel.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-http</artifactId>
 				<version>${dependency.camel.version}</version>
 				<scope>provided</scope>
 			</dependency>
