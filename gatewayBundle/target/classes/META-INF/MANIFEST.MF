@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1390350787450
+Bnd-LastModified: 1390423213053
 Build-Jdk: 1.7.0_45
 Built-By: bsaunders
 Bundle-Description: A Demo Project showing how to Pax Exam
