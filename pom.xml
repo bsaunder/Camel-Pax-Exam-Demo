@@ -60,12 +60,6 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-jms</artifactId>
-				<version>${dependency.camel.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-mvel</artifactId>
 				<version>${dependency.camel.version}</version>
 				<scope>provided</scope>
