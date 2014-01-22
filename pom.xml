@@ -16,8 +16,9 @@
 	</modules>
 
 	<properties>
+		<!-- Camel 2.10.2 Causes the Tests to fail with NPE's -->
 		<dependency.camel.version>2.12.2</dependency.camel.version>
-		<dependency.junit.version>4.11</dependency.junit.version>
+		<dependency.junit.version>4.10</dependency.junit.version>
 		<dependency.pax-exam.version>3.4.0</dependency.pax-exam.version>
 		<dependency.karaf.version>3.0.0</dependency.karaf.version>
 	</properties>
